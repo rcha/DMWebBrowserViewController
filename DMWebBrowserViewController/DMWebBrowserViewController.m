@@ -45,11 +45,10 @@
     _navBar.tintColor = [UIColor grayColor];
     
     // Loads an UIBarButtonItem (Cancel) on UINavigationBar
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelWebBrowser)];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(cancelWebBrowser)];
     UIBarButtonItem *refreshButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshWebBrowser)];
-    UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:[NSString stringWithFormat:@"%@", _urlAddress]];
-    [navItem setLeftBarButtonItem:barButtonItem];
-    [navItem setRightBarButtonItem:refreshButtonItem];
+    UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:[NSString stringWithFormat:@"%@", @"Clip Web Configuration"]];
+    [navItem setRightBarButtonItems:@[refreshButtonItem, barButtonItem]];
     [_navBar setItems:[NSArray arrayWithObject:navItem]];
     [self.view addSubview:_navBar];
     
